@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --red: #ff294b;
+  --pink: #ff7895;
+  --dark: #09090d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+#confettiCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* INTRO SCREEN */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background:
+    radial-gradient(circle at center, #38101b, #09090d 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  transition: opacity .8s, visibility .8s;
+}
+
+.intro.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro-content {
+  max-width: 550px;
+}
+
+.intro-bike {
+  font-size: 75px;
+  animation: bikeBounce 2s infinite;
+}
+
+.intro h1 {
+  font: 900 clamp(32px, 8vw, 55px) 'Orbitron', sans-serif;
+  margin: 20px 0;
+  line-height: 1.3;
+}
+
+.intro h1 span { color: var(--red); }
+
+.intro p {
+  color: #ddd;
+  line-height: 1.8;
+}
+
+.main-btn {
+  padding: 16px 28px;
+  border-radius: 40px;
+  background: linear-gradient(45deg, #ff294b, #ff718d);
+  color: white;
+  font-weight: 700;
+  margin-top: 28px;
+  box-shadow: 0 0 25px #ff294b66;
+  transition: .3s;
+}
+
+.main-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 35px #ff294b;
+}
+
+@keyframes bikeBounce {
+  0%,100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-13px) rotate(3deg); }
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.logo { color: var(--red); font-weight: 900; }
+
+/* HERO */
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 110px 20px 80px;
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.45)),
+    linear-gradient(0deg, #09090d, transparent 45%),
+    url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=1800")
+    center 55% / cover no-repeat;
+}
+
+.hero-content { max-width: 850px; }
+
+.tag {
+  color: var(--pink);
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font: 900 clamp(37px, 9vw, 85px)/1.2 'Orbitron', sans-serif;
+  text-shadow: 0 0 25px #ff294b66;
+  margin-bottom: 22px;
+}
+
+.hero h1 span, .section h2 span {
+  color: var(--red);
+}
+
+.subtitle {
+  color: #eee;
+  line-height: 1.9;
+  max-width: 620px;
+  margin: auto;
+}
+
+.engine-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid var(--red);
+  border-radius: 40px;
+  padding: 15px 28px;
+  margin-top: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.engine-btn:hover {
+  background: var(--red);
+  box-shadow: 0 0 25px var(--red);
+}
+
+#engineMessage {
+  color: var(--pink);
+  margin-top: 14px;
+  font-size: 13px;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+  padding: 85px 8%;
+  text-align: center;
+}
+
+.section h2 {
+  font: 700 clamp(25px, 5vw, 42px) 'Orbitron', sans-serif;
+  margin-bottom: 22px;
+}
+
+.about {
+  background: linear-gradient(135deg, #160b10, #0a0a0d);
+}
+
+.about-text {
+  max-width: 700px;
+  margin: auto;
+  line-height: 2;
+  color: #ccc;
+}
+
+.bike-icons {
+  font-size: 35px;
+  margin-top: 30px;
+}
+
+
+/* LOVE LETTER */
+
+.letter {
+  background: linear-gradient(135deg, #1c0b12, #09090d);
+}
+
+.letter-box {
+  max-width: 750px;
+  margin: auto;
+  padding: 35px;
+  border: 1px solid #792238;
+  background: #ffffff08;
+  border-radius: 18px;
+  color: #ddd;
+  line-height: 2;
+  box-shadow: 0 0 35px #ff294b15;
+}
+
+.letter-box p { margin-bottom: 15px; }
+
+.letter-box h3 {
+  color: var(--pink);
+  margin-top: 25px;
+}
+
+/* SURPRISE */
+
+.surprise {
+  background: #10080d;
+}
+
+.surprise p {
+  color: #ccc;
+}
+
+.surprise-message {
+  display: none;
+  margin: 40px auto 0;
+  animation: appear 1s ease;
+}
+
+.surprise-message.show { display: block; }
+
+.surprise-message h2 {
+  color: var(--pink);
+  text-shadow: 0 0 20px var(--red);
+}
+
+.surprise-message p {
+  margin-top: 15px;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 15px;
+  text-align: center;
+  background: #050507;
+  color: var(--pink);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+footer p { margin-top: 10px; }
+
+/* FLOATING HEARTS */
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  z-index: 90;
+  pointer-events: none;
+  animation: floatHeart 4s linear forwards;
+}
+
+@keyframes floatHeart {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+  .navbar {
+    padding: 18px;
+    font-size: 9px;
+  }
+
+  .section { padding: 65px 6%; }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .photo-card img { height: 300px; }
+
+  .letter-box { padding: 22px; }
+
+  .hero { background-position: 58% center; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+
+<!-- INTRO SCREEN -->
+<div class="intro" id="intro">
+  <div class="intro-content">
+    <div class="intro-bike">🏍️</div>
+    <p class="tag">ATTENTION, MY FAVOURITE RIDER!</p>
+    <h1>YOUR SPECIAL DAY IS <span>HERE!</span></h1>
+    <p>
+      I have prepared a little surprise for the most
+      special person in my life. Are you ready?
+    </p>
+    <button class="main-btn" onclick="openSurprise()">
+      OPEN YOUR SURPRISE ❤️
+    </button>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="logo">🏍️ RIDE OF LOVE</div>
+  <div>BIRTHDAY SPECIAL ❤️</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="tag">A SPECIAL DAY FOR MY SPECIAL PERSON</p>
+
+    <h1>
+      HAPPY BIRTHDAY<br>
+      <span>MY RIDER ❤️</span>
+    </h1>
+
+    <p class="subtitle">
+      To the boy whose smile is my favourite destination
+      and whose heart is my favourite place.
+      Today is all about YOU!
+    </p>
+
+    <button class="engine-btn" onclick="startEngine()">
+      🏍️ START THE ENGINE
+    </button>
+
+    <p id="engineMessage">Ready for your birthday ride?</p>
+  </div>
+</section>
+
+</section>
+
+<!-- LETTER -->
+<section class="section letter">
+  <p class="tag">A MESSAGE FROM MY HEART</p>
+
+  <div class="letter-box">
+    <p>Happy Birthday, my love Shemdya🤧❤️</p>
+
+    <p>
+     I just want you to know how special you are to me. I wish you endless happiness, success and all the beautiful things you deserve.
+    </p>
+
+    <p>
+      Never stop believing in yourself. Chase your dreams, work hard and keep winning. I'll always be there cheering for you, supporting you and reminding you how capable you are, especially on the days you doubt yourself.
+    </p>
+
+    <p>
+      I hope we always keep choosing each other, making silly memories, laughing over little things and finding happiness in the smallest moments. I want to see us grow individually and together, while being each other's comfort and biggest strength. ❤️
+    </p>
+
+    <p>
+      Bas ekach wish aahe, tu nehmi happy raha, smile karat raha ani tujhya saglya dreams complete kar. Your happiness means so much to me.
+    </p>
+    <p>
+    I'm proud of you, I believe in you, and I'm so lucky to have you.
+    </p>
+    <p>
+Khup khup prem karte tuzyavar, my handsome boy! ❤️🫂
+    </p>
+
+    <h3>I LOVE YOU MR.VARTAK ❤️</h3>
+  </div>
+</section>
+
+<!-- FINAL SURPRISE -->
+<section class="section surprise">
+  <p class="tag">WAIT... ONE LAST THING!</p>
+
+  <h2>Your Final <span>Surprise</span> 🎁</h2>
+
+  <p>Ready to unlock a little piece of my heart?</p>
+
+  <button class="main-btn" onclick="unlockGift()">
+    🎁 UNLOCK YOUR GIFT
+  </button>
+
+  <div class="surprise-message" id="giftMessage">
+    <h2>YOU ARE MY FAVOURITE PERSON FOREVER ❤️</h2>
+
+    <p>
+      My favourite rider, my biggest smile,
+      my sweetest feeling.
+    </p>
+
+    <p>
+      No matter where life takes us,
+      I hope we always choose each other.
+    </p>
+
+    <h2 style="margin-top:25px;">I LOVE YOU SO MUCH CUTIE😘🫂❤️</h2>
+
+    <p>HAPPY BIRTHDAY SHEMDYA 🤧🎂</p>
+  </div>
+</section>
+
+<script>
+// OPEN BIRTHDAY SURPRISE
+function openSurprise() {
+  document.getElementById("intro").classList.add("hide");
+  launchConfetti(180);
+  floatingHearts(15);
+}
+
+// CONFETTI ANIMATION - NO EXTRA LIBRARY REQUIRED
+const canvas = document.getElementById("confettiCanvas");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+let animationRunning = false;
+
+function resizeCanvas() {
+  const ratio = window.devicePixelRatio || 1;
+  canvas.width = window.innerWidth * ratio;
+  canvas.height = window.innerHeight * ratio;
+  canvas.style.width = window.innerWidth + "px";
+  canvas.style.height = window.innerHeight + "px";
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function launchConfetti(amount = 120) {
+  const colors = ["#ff294b", "#ff7895", "#ffffff", "#ffd166", "#b388ff"];
+
+  for (let i = 0; i < amount; i++) {
+    particles.push({
+      x: Math.random() * window.innerWidth,
+      y: -20 - Math.random() * window.innerHeight * .5,
+      size: Math.random() * 7 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      speed: Math.random() * 4 + 2,
+      drift: Math.random() * 3 - 1.5,
+      rotation: Math.random() * 360,
+      spin: Math.random() * 8 - 4,
+      life: 180
+    });
+  }
+
+  if (!animationRunning) {
+    animationRunning = true;
+    animateConfetti();
+  }
+}
+
+function animateConfetti() {
+  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+  particles = particles.filter(p => p.life > 0 && p.y < window.innerHeight + 30);
+
+  particles.forEach(p => {
+    p.y += p.speed;
+    p.x += p.drift;
+    p.rotation += p.spin;
+    p.life--;
+
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotation * Math.PI / 180);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * .65);
+    ctx.restore();
+  });
+
+  if (particles.length > 0) {
+    requestAnimationFrame(animateConfetti);
+  } else {
+    animationRunning = false;
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  }
+}
+
+// FLOATING HEARTS
+function floatingHearts(count) {
+  const emojis = ["❤️", "💕", "💖", "✨", "🏍️"];
+
+  for (let i = 0; i < count; i++) {
+    setTimeout(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (20 + Math.random() * 25) + "px";
+
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, i * 120);
+  }
+}
+
+// BIKE ENGINE SOUND
+function startEngine() {
+  document.getElementById("engineMessage").textContent =
+    "🔥 ENGINE STARTED! LET'S RIDE INTO LOVE! 🏍️";
+
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+
+    const audio = new AudioContext();
+    const oscillator = audio.createOscillator();
+    const gain = audio.createGain();
+
+    oscillator.type = "sawtooth";
+    oscillator.frequency.setValueAtTime(65, audio.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(180, audio.currentTime + .4);
+    oscillator.frequency.exponentialRampToValueAtTime(55, audio.currentTime + 1.2);
+
+    gain.gain.setValueAtTime(.12, audio.currentTime);
+    gain.gain.exponentialRampToValueAtTime(.001, audio.currentTime + 1.3);
+
+    oscillator.connect(gain);
+    gain.connect(audio.destination);
+
+    oscillator.start();
+    oscillator.stop(audio.currentTime + 1.3);
+
+    oscillator.onended = () => audio.close();
+  } catch (error) {
+    console.log("Audio is not supported.");
+  }
+}
+
+// UNLOCK FINAL GIFT
+function unlockGift() {
+  document.getElementById("giftMessage").classList.add("show");
+
+  launchConfetti(250);
+  floatingHearts(35);
+
+  document.querySelector(".surprise .main-btn").textContent =
+    "❤️ SURPRISE UNLOCKED!";
+}
+</script>
+
+</body>
+</html>
